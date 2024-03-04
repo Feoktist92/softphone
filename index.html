@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SIP Softphone</title>
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+        <link rel="stylesheet" type="text/css" href="popup.css" />
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="registerStatus"></div>
+            <div id="incomingCall" style="display: none">
+                <div class="callInfo">
+                    <h3>Входящий звонок</h3>
+                    <p id="incomingCallNumber">Unknown</p>
+                </div>
+                <div id="reject"><i class="fa fa-phone"></i></div>
+                <div id="answer"><i class="fa fa-phone"></i></div>
+            </div>
+            <div id="callStatus" style="display: none">
+                <div class="callInfo">
+                    <h3 id="callInfoText">info text goes here</h3>
+                    <p id="callInfoNumber">info number goes here</p>
+                    <p id="callDurationValue"></p>
+                </div>
+                <div id="hangUp"><i class="fa fa-phone"></i></div>
+            </div>
+            <div id="inCallButtons" style="display: none">
+                <div id="mute">
+                    <i id="muteIcon" class="fa fa-microphone"></i>
+                </div>
+            </div>
+
+            <div id="registerForm">
+                <input type="text" id="username" placeholder="Введите логин" />
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Введите пароль"
+                />
+                <input type="text" id="server" placeholder="Введите сервер" />
+
+                <button id="registerBtn">Регистрация</button>
+            </div>
+
+            <div id="callControl">
+                <div id="to">
+                    <input
+                        id="toField"
+                        type="text"
+                        placeholder="Введите SIP URI"
+                    />
+                </div>
+                <div id="connectCall"><i class="fa fa-phone"></i></div>
+            </div>
+
+            <div id="callLog"></div>
+        </div>
+
+        <script src="jssip.js"></script>
+        <script src="jquery.js"></script>
+        <script src="popup.js"></script>
+    </body>
+</html>

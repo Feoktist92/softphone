@@ -1,0 +1,41 @@
+{
+
+    "name": "SIP Softphone",
+    "version": "1.0",
+    "manifest_version": 3,
+    "permissions": [
+        "scripting",
+        "activeTab",
+        "storage",
+        "tabs",
+        "alarms",
+        "contentSettings",
+        "notifications"
+    ],
+
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "action": {
+        "default_popup": "index.html",
+        "default_icon": "./icons/smartphone_128.png"
+    },
+    "icons": {
+        "32": "icons/smartphone_32.png",
+        "64": "icons/smartphone_64.png",
+        "128": "icons/smartphone_128.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*/*",
+                "http://*/*"
+              ],
+            "js": [
+                "popup.js",
+                "jssip.js",
+                "jquery.js"
+            ]
+        }
+    ]
+}
